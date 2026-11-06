@@ -117,21 +117,6 @@ int main(int argc, char* argv[]) {
         return 2;
     }
 
-    timeval timeout{};
-    timeout.tv_sec = 5;
-
-    setsockopt(socket_fd,
-               SOL_SOCKET,
-               SO_RCVTIMEO,
-               &timeout,
-               sizeof(timeout));
-
-    setsockopt(socket_fd,
-               SOL_SOCKET,
-               SO_SNDTIMEO,
-               &timeout,
-               sizeof(timeout));
-
     sockaddr_un address{};
     address.sun_family = AF_UNIX;
 
@@ -150,6 +135,20 @@ int main(int argc, char* argv[]) {
         close(socket_fd);
         return 2;
     }
+    timeval communication_timeout{};
+    communication_timeout.tv_sec = 5;
+
+    setsockopt(socket_fd,
+               SOL_SOCKET,
+               SO_RCVTIMEO,
+               &communication_timeout,
+               sizeof(communication_timeout));
+
+    setsockopt(socket_fd,
+               SOL_SOCKET,
+               SO_SNDTIMEO,
+               &communication_timeout,
+               sizeof(communication_timeout));
 
     const std::uint32_t path_length =
         static_cast<std::uint32_t>(
