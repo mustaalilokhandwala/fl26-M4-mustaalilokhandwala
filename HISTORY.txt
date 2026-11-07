@@ -1,0 +1,94 @@
+commit 2660ca1ca3e31f82ed0ebeaac581c7e9da6d9f88
+Author: Mustaali Lokhandwala <mustaali23@vt.edu>
+Date:   2026-11-07 12:25:30 -0500
+
+    Completed M4 design documentation
+
+ DESIGN.md | 29 +++++++++++++++++++++++++++--
+ 1 file changed, 27 insertions(+), 2 deletions(-)
+
+commit f58de5f4f6350f403f2b50c2291b8b58d2f8cbce
+Author: Mustaali Lokhandwala <mustaali23@vt.edu>
+Date:   2026-11-06 11:35:12 -0500
+
+    Implemented M4 required tests
+
+ CMakeLists.txt          |   1 +
+ tests/student_tests.cpp | 804 +++++++++++++++++++++++++++++++++++++++++++++++-
+ tools/aiws_send.cpp     |  29 +-
+ 3 files changed, 817 insertions(+), 17 deletions(-)
+
+commit 614e6e4aefb3ecc0cfa135247ec58394b89c980a
+Author: Mustaali Lokhandwala <mustaali23@vt.edu>
+Date:   2026-11-06 10:01:46 -0500
+
+    Implemented CR-1 remote add support
+
+ CMakeLists.txt      |   5 +
+ src/ipc_server.cpp  | 280 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/main.cpp        |  40 +++++++-
+ tools/aiws_send.cpp | 212 +++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 534 insertions(+), 3 deletions(-)
+
+commit 0f1311a64171484ccd71a884781dfeabc1eff2fd
+Author: Mustaali Lokhandwala <mustaali23@vt.edu>
+Date:   2026-11-05 21:05:59 -0500
+
+    Implement M4 background corpus build
+
+ .gitignore                                 |   2 +
+ CMakeLists.txt                             |  57 ++++
+ DESIGN.md                                  |   3 +
+ STARTER_README.pdf                         | Bin 0 -> 39600 bytes
+ data/public/doc_ai.txt                     |   3 +
+ data/public/doc_retrieval.txt              |   3 +
+ data/public/doc_systems.txt                |   3 +
+ data/public/queries.txt                    |   4 +
+ include/aiws/chunker.hpp                   |  25 ++
+ include/aiws/chunking_strategy.hpp         |  18 ++
+ include/aiws/context_builder.hpp           |  13 +
+ include/aiws/context_strategy.hpp          |  17 +
+ include/aiws/corpus_index.hpp              |  36 +++
+ include/aiws/document.hpp                  |  22 ++
+ include/aiws/gui/context_widget.hpp        |  75 +++++
+ include/aiws/gui/main_window.hpp           | 189 +++++++++++
+ include/aiws/gui/resettable.hpp            |  22 ++
+ include/aiws/gui/search_result_model.hpp   |  84 +++++
+ include/aiws/gui/search_widget.hpp         | 105 ++++++
+ include/aiws/gui/term_inspector_widget.hpp |  81 +++++
+ include/aiws/gui/workspace_widget.hpp      | 101 ++++++
+ include/aiws/ipc_server.hpp                |  34 ++
+ include/aiws/processing_core.hpp           |  53 ++++
+ include/aiws/processing_types.hpp          |  38 +++
+ include/aiws/retrieval_engine.hpp          |  18 ++
+ include/aiws/retrieval_strategy.hpp        |  20 ++
+ include/aiws/text_processor.hpp            |  29 ++
+ include/aiws/workspace.hpp                 |  19 ++
+ src/chunker.cpp                            |  59 ++++
+ src/context_builder.cpp                    |  29 ++
+ src/context_widget.cpp                     | 109 +++++++
+ src/corpus_index.cpp                       |  72 +++++
+ src/document.cpp                           |  14 +
+ src/ipc_server.cpp                         |   0
+ src/main.cpp                               |  40 +++
+ src/main_window.cpp                        | 491 +++++++++++++++++++++++++++++
+ src/processing_core.cpp                    | 100 ++++++
+ src/retrieval_engine.cpp                   |  86 +++++
+ src/search_result_model.cpp                |  97 ++++++
+ src/search_widget.cpp                      | 166 ++++++++++
+ src/term_inspector_widget.cpp              |  93 ++++++
+ src/text_processor.cpp                     | 116 +++++++
+ src/workspace.cpp                          |  17 +
+ src/workspace_widget.cpp                   | 101 ++++++
+ tests/student_tests.cpp                    |   2 +
+ tools/aiws_send.cpp                        |   0
+ 46 files changed, 2666 insertions(+)
+
+commit c73ecf9a18951401782cc316de237968b3137408
+Author: Mustaali Lokhandwala <mustaali23@vt.edu>
+Date:   2026-10-28 11:53:40 -0400
+
+    Added M4 design note
+
+ DESIGN_NOTE.md | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
